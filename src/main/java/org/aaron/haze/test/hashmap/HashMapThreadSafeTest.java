@@ -12,8 +12,8 @@ import org.apache.commons.collections.MapUtils;
 public class HashMapThreadSafeTest 
 {
 	public static void main(String[] args) {
-		//Map<String, String> map = new HashMap<String, String>();
-        Map<String, String> map = Collections.synchronizedMap(new HashMap<String, String>());
+		Map<String, String> map = new HashMap<String, String>();
+        //Map<String, String> map = Collections.synchronizedMap(new HashMap<String, String>());
         
         List<String> keys = new ArrayList<String>();
         List<java.lang.Thread> threads = new ArrayList<java.lang.Thread>();
