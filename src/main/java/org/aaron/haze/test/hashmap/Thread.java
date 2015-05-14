@@ -1,6 +1,7 @@
 package org.aaron.haze.test.hashmap;
 
 import java.util.Map;
+import java.util.Random;
 
 
 public class Thread implements Runnable {
@@ -37,8 +38,12 @@ public class Thread implements Runnable {
 	}
 	
 	private void sleep() {
+		Random r = new Random();
+		int Low = 100;
+		int High = 300;
+		int R = r.nextInt(High-Low) + Low;
 		try {
-			java.lang.Thread.sleep(500);
+			java.lang.Thread.sleep(R);
 		} catch (InterruptedException e) {
 		}
 	}
