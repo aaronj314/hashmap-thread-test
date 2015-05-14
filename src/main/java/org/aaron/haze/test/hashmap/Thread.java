@@ -6,7 +6,6 @@ import java.util.Map;
 public class Thread implements Runnable {
 	private Map<String, String> map;
 	private String key;
-	private int count = 0;
 	private long cycles = 0;
 	
 	public Thread(String key, Map<String, String> map) {
@@ -16,6 +15,7 @@ public class Thread implements Runnable {
 
 	public void run() {
 		while(true) {
+			sleep();
 			if(map.containsKey(key)){
 				// this will modify the map structure which is
 				// not thread-safe
@@ -33,7 +33,14 @@ public class Thread implements Runnable {
 
 	private void printStats() {
 		String name = java.lang.Thread.currentThread().getName();
-		System.out.println("Thread["+name+"]\tKey["+key+"]\tNum-Cycles["+cycles+"]\tKey-Count["+count+"]");
+		System.out.println("KEY NOT FOUND IN MAP::Thread["+name+"]\tKey["+key+"]\tNum-Cycles["+cycles+"]");
+	}
+	
+	private void sleep() {
+		try {
+			java.lang.Thread.sleep(500);
+		} catch (InterruptedException e) {
+		}
 	}
 
 }

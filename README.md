@@ -1,4 +1,6 @@
 # hashmap-thread-test
 
-## Build and Run
+## Build and Run Using Maven
+```
 mvn exec:java
+```
