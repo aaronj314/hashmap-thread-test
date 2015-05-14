@@ -28,12 +28,7 @@
 						</goals>
 						<configuration>
 							<mainClass>org.aaron.haze.test.hashmap.HashMapThreadSafeTest</mainClass>
-							<systemProperties>
-								<systemProperty>
-									<key>derby.stream.error.file</key>
-									<value>${basedir}/target/derby.log</value>
-								</systemProperty>
-							</systemProperties>
+							<systemProperties/>
 						</configuration>
 					</execution>
 				</executions>
